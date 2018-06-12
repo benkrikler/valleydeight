@@ -11,7 +11,7 @@ def MyClass():
     return _aClass
 
 
-def test_object(MyClass):
+def test_object_dict(MyClass):
     object_t = vd.Object(MyClass)
 
     args = dict(name="first", value=355)
@@ -19,6 +19,20 @@ def test_object(MyClass):
 
     assert instance.name == "first"
     assert instance.value == 355
+
+
+def test_object_list(MyClass):
+    object_t = vd.Object(MyClass)
+
+    args = ["first", 355]
+    instance = object_t(args)
+
+    assert instance.name == "first"
+    assert instance.value == 355
+
+    object_t = vd.Object(MyClass, expand_lists=False)
+    with pytest.raises(TypeError) as e:
+        object_t(args)
 
 
 def test_list_object(MyClass):
