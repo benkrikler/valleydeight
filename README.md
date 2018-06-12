@@ -68,4 +68,5 @@ arbitrary number of items, which must all be the same type (although this can
 be a `Choice` type), whereas a `FixedList` has both a fixed length and specific types for each element.
 
 ## Example program
-For an example program see the script in the `examples/` directory on GitHub.  In addition the unit tests in the `tests/` directory might be informative.
+For an example program see the script in the [`examples/`](https://github.com/benkrikler/valedictory/tree/master/examples) directory on GitHub.
+In addition the unit tests in the [`tests/`](https://github.com/benkrikler/valedictory/tree/master/tests) directory might be informative.
