@@ -67,7 +67,7 @@ def test_dict_default_value(d1):
         dict_t(d1)
 
 
-def test_dict_unknown_keys(d1):
+def test_dict_need_all_keys(d1):
     dict_t = vd.Dict(one=vd.Str(), two=vd.Str(), three=vd.Bool()).opts(need_all_keys=True)
 
     with pytest.raises(vd.ValidatorException):
