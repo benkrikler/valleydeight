@@ -1,5 +1,17 @@
 import six
 
+class _NamedDict(dict):
+
+    def __getattribute__(self, name):
+        try:
+            return self[name]
+        except KeyError:
+            msg = "'%s' object has no attribute '%s'"
+            raise AttributeError(msg % (type(self).__name__, name))
+
+    def __setattr__(self, name, value):
+        self[name] = value
+
 
 class ValidatorException(Exception):
     pass
@@ -66,7 +78,7 @@ class Dict(BaseValidator):
     def __call__(self, instance):
         if not isinstance(instance, dict):
             self._raise()
-        out_dict = {}
+        out_dict = _NamedDict()
         for key, val in instance.items():
             value_type = self.key_value_types.get(key, None)
             if not value_type:
@@ -80,8 +92,6 @@ class Choice(BaseValidator):
         super(Choice, self).__init__(**kwargs)
         self.validator_choices = tuple(c for c in choices if isinstance(c, BaseValidator))
         self.static_choices = tuple(c for c in choices if c not in self.validator_choices)
-        print "BEK static_choices", self.static_choices
-        print "BEK validator_choices", self.validator_choices
 
     def __call__(self, instance):
         if instance in self.static_choices:
