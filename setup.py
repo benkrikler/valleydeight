@@ -13,6 +13,7 @@ setuptools.setup(
     long_description_content_type="text/markdown",
     url="https://github.com/benkrikler/valedictory",
     packages=setuptools.find_packages(),
+    install_requires=['six'],
     classifiers=(
         "Programming Language :: Python :: 2",
         "Programming Language :: Python :: 3",
