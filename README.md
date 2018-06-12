@@ -1,4 +1,4 @@
-[![PyPI version](https://img.shields.io/pypi/v/valleydeight.svg?longCache=true&style=flat-square)](https://badge.fury.io/py/valleydeight)
+[![PyPI version](https://img.shields.io/pypi/v/valleydeight.svg?longCache=true&style=flat-square)](https://pypi.org/project/valleydeight/)
 [![Build Status](https://img.shields.io/travis/benkrikler/valleydeight/master.svg?longCache=true&style=flat-square)](https://travis-ci.org/benkrikler/valleydeight)
 [![codecov](https://img.shields.io/codecov/c/github/benkrikler/valleydeight/master.svg?longCache=true&style=flat-square)](https://codecov.io/gh/benkrikler/valleydeight)
 
@@ -42,7 +42,6 @@ validator = vd.List(vd.Dict(name=vd.Str(), on=vd.Bool()))
 # Make a test object that should pass fine
 test_object = [dict(name="hello", on=True), dict(name="World", on=False)]
 parsed_object = validator(test_object)
-
 
 # Make a test object that will fail, since one of the elements has the wrong type:
 test_object = [dict(name="hello", on=True), dict(name="World", on=2018)]
