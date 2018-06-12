@@ -1,7 +1,7 @@
-[![Build Status](https://img.shields.io/travis/benkrikler/valedictory/master.svg?style=for-the-badge)](https://travis-ci.org/benkrikler/valedictory)
-[![codecov](https://img.shields.io/codecov/c/github/benkrikler/valedictory/master.svg?style=for-the-badge)](https://codecov.io/gh/benkrikler/valedictory)
+[![Build Status](https://img.shields.io/travis/benkrikler/valleydeight/master.svg?style=for-the-badge)](https://travis-ci.org/benkrikler/valleydeight)
+[![codecov](https://img.shields.io/codecov/c/github/benkrikler/valleydeight/master.svg?style=for-the-badge)](https://codecov.io/gh/benkrikler/valleydeight)
 
-Valedictory
+Valleydeight
 ===========
 
 > Effective dictionary and nested object validation for Python
@@ -15,7 +15,7 @@ This allows the code here to be useful in many other situations, and to validate
 ## Installation
 (Coming soon:)
 ```
-pip install --user valedictory
+pip install --user valleydeight
 ```
 
 ## Usage
@@ -33,7 +33,7 @@ To use the validator call it with the object you wish to validate.
 
 For example, say we wish to check that we have a list of dictionaries where each dictionary has a string called "name" and a boolean called "on":
 ```python
-import valedictory as vd
+import valleydeight as vd
 
 # Build the validator
 validator = vd.List(vd.Dict(name=vd.Str(), on=vd.Bool()))
@@ -51,7 +51,7 @@ parsed_object = validator(test_object)
 
 The `Choice` class allows us to make complicated "custom" types:
 ```python
-import valedictory as vd
+import valleydeight as vd
 
 # Something like a pythonic Enum with mixed types:
 enum_t = vd.Choice("one", 4, True)
@@ -68,5 +68,5 @@ arbitrary number of items, which must all be the same type (although this can
 be a `Choice` type), whereas a `FixedList` has both a fixed length and specific types for each element.
 
 ## Example program
-For an example program see the script in the [`examples/`](https://github.com/benkrikler/valedictory/tree/master/examples) directory on GitHub.
-In addition the unit tests in the [`tests/`](https://github.com/benkrikler/valedictory/tree/master/tests) directory might be informative.
+For an example program see the script in the [`examples/`](https://github.com/benkrikler/valleydeight/tree/master/examples) directory on GitHub.
+In addition the unit tests in the [`tests/`](https://github.com/benkrikler/valleydeight/tree/master/tests) directory might be informative.

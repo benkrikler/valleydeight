@@ -6,7 +6,7 @@ import yaml
 import argparse
 import glob
 import os
-import valedictory as vd
+import valleydeight as vd
 
 
 def run(config):

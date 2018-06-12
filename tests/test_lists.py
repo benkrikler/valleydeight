@@ -1,4 +1,4 @@
-import valedictory as vd
+import valleydeight as vd
 import pytest
 
 
