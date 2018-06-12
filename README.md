@@ -1,5 +1,9 @@
+[![Latest Version](https://pypip.in/version/valedictory/badge.svg)](https://pypi.python.org/pypi/valedictory/)
 [![Build Status](https://travis-ci.org/benkrikler/valedictory.svg?branch=master)](https://travis-ci.org/benkrikler/valedictory)
 [![codecov](https://codecov.io/gh/benkrikler/valedictory/branch/master/graph/badge.svg)](https://codecov.io/gh/benkrikler/valedictory)
+
+[![Build Status test](https://img.shields.io/travis/benkrikler/valedictory/master.svg?style-for-the-badge)](https://travis-ci.org/benkrikler/valedictory)
+[![codecov test](https://img.shields.io/codecov/c/github/benkrikler/valedictory/master.svg?style=for-the-badge)](https://codecov.io/gh/benkrikler/valedictory)
 
 Valedictory
 ===========
