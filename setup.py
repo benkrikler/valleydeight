@@ -6,8 +6,8 @@ with open("README.md", "r") as fh:
 setuptools.setup(
     name="valedictory",
     version="0.0.1",
-    author="Benjamin E Krikler",
-    author_email="bkrikler@gmail.com",
+    author="Ben Krikler",
+    author_email="b.krikler@gmail.com",
     description="Effective dictionary and nested object validation",
     long_description=long_description,
     long_description_content_type="text/markdown",
