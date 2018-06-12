@@ -1,5 +1,5 @@
-[![Build Status](https://img.shields.io/travis/benkrikler/valleydeight/master.svg?style=for-the-badge)](https://travis-ci.org/benkrikler/valleydeight)
-[![codecov](https://img.shields.io/codecov/c/github/benkrikler/valleydeight/master.svg?style=for-the-badge)](https://codecov.io/gh/benkrikler/valleydeight)
+[![Build Status](https://img.shields.io/travis/benkrikler/valleydeight/master.svg?style=for-the-badge&longCache=true)](https://travis-ci.org/benkrikler/valleydeight)
+[![codecov](https://img.shields.io/codecov/c/github/benkrikler/valleydeight/master.svg?style=for-the-badge&longCache=true)](https://codecov.io/gh/benkrikler/valleydeight)
 
 Valleydeight
 ===========
