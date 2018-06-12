@@ -1,0 +1,6 @@
+- glob: examples/*
+- glob: examples/
+- glob: examples
+  recursive: False
+- glob: examples
+  recursive: 234
