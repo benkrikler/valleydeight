@@ -18,7 +18,14 @@ def test_dict(d1):
     assert parsed_dict["one"] == "hello"
     assert parsed_dict["two"] == "world"
 
-    with pytest.raises(vd.ValidatorException) as e:
+    with pytest.raises(vd.ValidatorException):
         dict_t(4)
         dict_t(dict(one=1, two="2"))
         dict_t(int_list)
+        dict_t(dict(one=1, two="2", three=3))
+
+def test_named_dict():
+    nd = vd.dict_types._NamedDict(one="sadlfiyhasd", two=434)
+    nd.hey = "teacher"
+    with pytest.raises(AttributeError):
+        left = nd.not_valid
