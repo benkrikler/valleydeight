@@ -20,8 +20,11 @@ def test_dict(d1):
 
     with pytest.raises(vd.ValidatorException):
         dict_t(4)
+    with pytest.raises(vd.ValidatorException):
         dict_t(dict(one=1, two="2"))
-        dict_t(int_list)
+    with pytest.raises(vd.ValidatorException):
+        dict_t([1, 2, 3])
+    with pytest.raises(vd.ValidatorException):
         dict_t(dict(one=1, two="2", three=3))
 
 def test_named_dict():

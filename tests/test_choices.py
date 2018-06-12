@@ -8,9 +8,11 @@ def test_choice_static():
     assert choice_t("one") == "one"
     assert choice_t(True) == True
     assert choice_t(4) == 4
-    with pytest.raises(vd.ValidatorException) as e:
+    with pytest.raises(vd.ValidatorException):
         choice_t(8)
+    with pytest.raises(vd.ValidatorException):
         choice_t(dict(one=1, two="2"))
+    with pytest.raises(vd.ValidatorException):
         choice_t("two")
 
 
@@ -19,8 +21,9 @@ def test_choice_validators():
 
     assert choice_t(True) == True
     assert choice_t("True") == "True"
-    with pytest.raises(vd.ValidatorException) as e:
+    with pytest.raises(vd.ValidatorException):
         choice_t(8)
+    with pytest.raises(vd.ValidatorException):
         choice_t(dict(one=1, two="2"))
 
 
@@ -31,7 +34,9 @@ def test_choice_mixed():
     assert choice_t("True") == "True"
     assert choice_t(3) == 3
     assert choice_t(2.22) == 2.22
-    with pytest.raises(vd.ValidatorException) as e:
+    with pytest.raises(vd.ValidatorException):
         choice_t(8)
+    with pytest.raises(vd.ValidatorException):
         choice_t(dict(one=1, two="2"))
+    with pytest.raises(vd.ValidatorException):
         choice_t(7.92342)
