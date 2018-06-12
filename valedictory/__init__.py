@@ -21,8 +21,8 @@ class BaseValidator(object):
 
 
 class SimpleType(BaseValidator):
-    def __init__(self, class_type, **kwargs):
-        super(self, SimpleType).__init__(**kwargs)
+    def __init__(self, **kwargs):
+        super(SimpleType, self).__init__(**kwargs)
 
     def __call__(self, instance):
         if not isinstance(instance, self.class_type):
@@ -48,19 +48,19 @@ class Float(SimpleType):
 
 class List(BaseValidator):
     def __init__(self, element_type, **kwargs):
-        super(self, List).__init__(**kwargs)
+        super(List, self).__init__(**kwargs)
         self.element_type = element_type
 
     def __call__(self, instance):
         if not isinstance(instance, (list, tuple)):
             self._raise()
-        return (self.element_type(ele) for ele in instance)
+        return [self.element_type(ele) for ele in instance]
 
 
 class Dict(BaseValidator):
     def __init__(self, **kwargs):
         node = kwargs.pop("node", "")
-        super(self, Dict).__init__(node=node)
+        super(Dict, self).__init__(node=node)
         self.key_value_types = kwargs
 
     def __call__(self, instance):
@@ -77,12 +77,14 @@ class Dict(BaseValidator):
 
 class Choice(BaseValidator):
     def __init__(self, *choices, **kwargs):
-        super(self, Choice).__init__(**kwargs)
-        self.validator_choices = (c for c in choices if isinstance(c, BaseValidator))
-        self.instance_choices = (c for c in choices if not in self.validator_choices)
+        super(Choice, self).__init__(**kwargs)
+        self.validator_choices = tuple(c for c in choices if isinstance(c, BaseValidator))
+        self.static_choices = tuple(c for c in choices if c not in self.validator_choices)
+        print "BEK static_choices", self.static_choices
+        print "BEK validator_choices", self.validator_choices
 
     def __call__(self, instance):
-        if instance in self.instance_choices:
+        if instance in self.static_choices:
             return instance
 
         for choice in self.validator_choices:
