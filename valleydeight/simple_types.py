@@ -5,7 +5,6 @@ import six
 __all__ = ["Str", "Int", "Bool", "Float"]
 
 
-
 class SimpleType(BaseValidator):
     def __init__(self, **kwargs):
         super(SimpleType, self).__init__(**kwargs)
