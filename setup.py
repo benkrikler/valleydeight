@@ -13,7 +13,7 @@ setuptools.setup(
     long_description_content_type="text/markdown",
     url="https://github.com/benkrikler/valleydeight",
     packages=setuptools.find_packages(),
-    install_requires=['six'],
+    install_requires=['six', 'pyyaml'],
     setup_requires=["pytest-runner"],
     tests_require=['pytest', 'pytest-cov', 'pytest-pep8'],
     classifiers=(
