@@ -15,7 +15,7 @@ setuptools.setup(
     packages=setuptools.find_packages(),
     install_requires=['six'],
     setup_requires=["pytest-runner"],
-    tests_require=["pytest"],
+    tests_require=['pytest', 'pytest-cov', 'pytest-pep8'],
     classifiers=(
         "Programming Language :: Python :: 2",
         "Programming Language :: Python :: 3",
