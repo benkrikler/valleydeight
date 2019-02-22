@@ -8,4 +8,4 @@ from .base import Pass
 
 
 __author__ = "Ben Krikler"
-__version__ = '0.0.2'
+__version__ = '0.1.0'
