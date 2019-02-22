@@ -5,7 +5,7 @@ with open("README.md", "r") as fh:
 
 setuptools.setup(
     name="valleydeight",
-    version="0.0.2",
+    version="version='0.0.3'",
     author="Ben Krikler",
     author_email="b.krikler@gmail.com",
     description="Effective dictionary and nested object validation",
@@ -13,9 +13,9 @@ setuptools.setup(
     long_description_content_type="text/markdown",
     url="https://github.com/benkrikler/valleydeight",
     packages=setuptools.find_packages(),
-    install_requires=['six'],
+    install_requires=['six', 'pyyaml'],
     setup_requires=["pytest-runner"],
-    tests_require=["pytest"],
+    tests_require=['pytest', 'pytest-cov', 'pytest-pep8'],
     classifiers=(
         "Programming Language :: Python :: 2",
         "Programming Language :: Python :: 3",

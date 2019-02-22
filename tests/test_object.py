@@ -31,7 +31,7 @@ def test_object_list(MyClass):
     assert instance.value == 355
 
     object_t = vd.Object(MyClass, expand_lists=False)
-    with pytest.raises(TypeError) as e:
+    with pytest.raises(TypeError):
         object_t(args)
 
 
@@ -40,7 +40,7 @@ def test_list_object(MyClass):
 
     args = [dict(name="first", value=355),
             dict(name="second", value=0.55),
-           ]
+            ]
     instance = object_t(args)
 
     assert instance[0].name == "first"
@@ -51,7 +51,7 @@ def test_list_object(MyClass):
 
 def test_object_args_dict(MyClass):
     arg_spec = vd.Dict(name=vd.Str(), value=vd.Int())
-    object_t = vd.Object(MyClass, args = arg_spec)
+    object_t = vd.Object(MyClass, args=arg_spec)
 
     args = dict(name="first", value=355)
     instance = object_t(args)
@@ -62,7 +62,7 @@ def test_object_args_dict(MyClass):
 
 def test_object_args_list(MyClass):
     arg_spec = vd.FixedList(vd.Str(), vd.Int())
-    object_t = vd.Object(MyClass, args = arg_spec)
+    object_t = vd.Object(MyClass, args=arg_spec)
 
     args = ["first", 355]
     instance = object_t(args)
@@ -76,7 +76,7 @@ def test_object_args_both(MyClass):
     arg_spec_list = vd.FixedList(vd.Str(), vd.Int())
     arg_spec = vd.Choice(arg_spec_list, arg_spec_dict)
 
-    object_t = vd.Object(MyClass, args = arg_spec)
+    object_t = vd.Object(MyClass, args=arg_spec)
 
     args = ["first", 355]
     instance = object_t(args)
