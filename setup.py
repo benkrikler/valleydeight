@@ -5,7 +5,7 @@ with open("README.md", "r") as fh:
 
 setuptools.setup(
     name="valleydeight",
-    version="version='0.0.3'",
+    version='0.0.4',
     author="Ben Krikler",
     author_email="b.krikler@gmail.com",
     description="Effective dictionary and nested object validation",
