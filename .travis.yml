@@ -15,3 +15,13 @@ script:
 after_success:
   - coverage combine
   - codecov
+
+deploy:
+  provider: pypi
+  user: ben.krikler
+  password:
+    secure: BBDD6gkkJ7V4mClKrBIM5KPj0mxnRnAD+LJSm4yvEv5QCDb+cGfIt8hEYhTkKqMevyJ6ocN+Gqs1tH2vYWzuiWnD53zhCLLfRzts2+MvfXXTI6crspcys3UgPqGsRvoRYwSz1L98giB75vxNfaPGz+b6wifrG3E5/ZJLlSD5yqC7GWxZwoyiGhNoYjBmcohDRqAswQ44Alv6G4E9ZIJj1ijqyz2yPMhpVPJoycxFpW+04n7xD/k3iqxnvQPQVzQLyfXH16XupgMY1bZCtetutsxAelonhdRLC7Ou2GBMikh8Loq+ZUpKpFxE1Kr7uouhK+Nyt0rItKb1kPvLK8ClQB6+b/6fX5YLNVBUzQFHbDxHrwsuLMJD0L7yqUF7/7tQd233slZHM0aiB8QFgfKiapfhVTOjFCWthxIu4C7I9tEfqnvHRRGXlfTKa4mxZWDhmcRCiFI/eSl/JsTNvIrEIBEFk3de41aAwYYCPJxR5IVUqrnxvItWpFKw1arbaSG2YdpDtrfqYwZbiW/+dRkReD3IF2JIbJNxJcp6MkI+T8bGFMFKmRg+eQFDqTvBDzqwsjsSNxGv7XKjKtperUHH/EkrHgKo6gpvFBkpd8mH6MU0z6z/YuyCux4aPbdmNusHLSDXQwyid5jyvqVPoGsl54a//7wy1sDehf3DyubeT/0=
+  distributions: "sdist bdist_wheel --universal"
+  on:
+    tags: true
+    branch: master
